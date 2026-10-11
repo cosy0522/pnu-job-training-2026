@@ -3,6 +3,9 @@
 부산대학교 교직원 역량 강화를 위한 **2026년도 직무연수 안내 웹사이트**입니다.  
 구글 스프레드시트와의 실시간 연동을 통해 데이터가 업데이트되면 새로고침 시 사이트에 즉시 반영됩니다.
 
+- 🌐 **웹사이트 배포 주소**: [https://cosy0522.github.io/pnu-job-training-2026/](https://cosy0522.github.io/pnu-job-training-2026/)
+- 💻 **GitHub 저장소**: [https://github.com/cosy0522/pnu-job-training-2026](https://github.com/cosy0522/pnu-job-training-2026)
+
 ---
 
 ## 🌟 주요 기능
