@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연수 과정 상세 안내 - 2026 부산대학교 직무연수</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       GLOBAL HEADER (반응형 PNU 헤더 & 로고)
+       ===================================================================== -->
+  <header class="pnu-header">
+    <div class="pnu-header-inner">
+      
+      <!-- 반응형 브랜드 로고 -->
+      <a href="index.html" class="pnu-logo-link" aria-label="부산대학교 직무연수 홈으로 이동">
+        <div class="pnu-logo-symbol-wrapper">
+          <img 
+            src="assets/logo.png" 
+            alt="부산대학교 로고" 
+            class="pnu-logo-symbol"
+            width="46" 
+            height="46"
+          >
+        </div>
+        <div class="pnu-logo-text">
+          <span class="pnu-logo-kr">부산대학교</span>
+          <span class="pnu-logo-en">PUSAN NATIONAL UNIVERSITY</span>
+        </div>
+        <div class="pnu-logo-divider" aria-hidden="true"></div>
+        <span class="pnu-logo-badge">직무연수 포털</span>
+      </a>
+
+      <!-- 데스크톱 글로벌 네비게이션 -->
+      <nav class="pnu-nav" aria-label="메인 메뉴">
+        <ul class="pnu-nav-list">
+          <li><a href="index.html" class="pnu-nav-link">연수 목록</a></li>
+          <li><a href="index.html#stats" class="pnu-nav-link">연수 현황</a></li>
+          <li><a href="https://hrd.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-nav-link">인재개발원</a></li>
+          <li><a href="https://www.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-nav-link">부산대 홈</a></li>
+        </ul>
+      </nav>
+
+      <!-- 우측 액션 및 모바일 햄버거 -->
+      <div class="pnu-actions">
+        <a href="https://e-onestop.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-btn-portal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+            <polyline points="10 17 15 12 10 7"/>
+            <line x1="15" y1="12" x2="3" y2="12"/>
+          </svg>
+          <span>포털 바로가기</span>
+        </a>
+
+        <!-- 모바일 햄버거 메뉴 버튼 -->
+        <button 
+          type="button" 
+          class="pnu-hamburger-btn" 
+          aria-label="전체 메뉴 열기" 
+          aria-expanded="false"
+        >
+          <svg class="pnu-hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- 모바일 드로어 오버레이 -->
+    <div class="pnu-mobile-drawer">
+      <div class="pnu-mobile-menu-content">
+        <ul class="pnu-mobile-nav-list">
+          <li><a href="index.html" class="pnu-mobile-nav-link">연수 목록</a></li>
+          <li><a href="index.html#stats" class="pnu-mobile-nav-link">연수 현황</a></li>
+          <li><a href="https://hrd.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-mobile-nav-link">인재개발원 바로가기</a></li>
+          <li><a href="https://www.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-mobile-nav-link">부산대학교 홈페이지</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN WRAPPER
+       ===================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- Loading State -->
+    <div class="loading-container" id="loadingContainer">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">연수 과정 상세 정보를 구글 시트에서 불러오고 있습니다...</p>
+    </div>
+
+    <!-- Error State (Course Not Found) -->
+    <div id="errorContainer" style="display: none;"></div>
+
+    <!-- Course Detail Container (Dynamic Content) -->
+    <div id="detailContainer" style="display: none;">
+      <!-- Populated via js/detail.js -->
+    </div>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="pnu-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-wrap">
+          <div class="footer-brand-title">
+            <img src="assets/logo.png" alt="부산대학교 엠블럼">
+            <span>부산대학교 직무연수 포털</span>
+          </div>
+          <p class="footer-brand-desc">
+            (46241) 부산광역시 금정구 부산대학로63번길 2 (장전동) 부산대학교 인재개발원<br>
+            2026 직무연수 카탈로그 디지털 혁신 프로젝트
+          </p>
+        </div>
+
+        <div class="footer-links-row">
+          <div class="footer-col">
+            <h5>연수 담당 부서</h5>
+            <ul>
+              <li><a href="tel:051-510-1231">인재개발원 (051-510-1231)</a></li>
+              <li><a href="tel:051-510-2001">정보화본부 (051-510-2001)</a></li>
+              <li><a href="tel:051-510-1119">안전관리실 (051-510-1119)</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>학내 주요 시스템</h5>
+            <ul>
+              <li><a href="https://e-onestop.pusan.ac.kr" target="_blank" rel="noopener">스마트 원스톱 포털</a></li>
+              <li><a href="https://plato.pusan.ac.kr" target="_blank" rel="noopener">PLATO 스마트 교육 플랫폼</a></li>
+              <li><a href="https://lib.pusan.ac.kr" target="_blank" rel="noopener">부산대학교 도서관</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 PUSAN NATIONAL UNIVERSITY. All Rights Reserved.</p>
+        <p>Real-time Google Sheets Live API Integration with PapaParse</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External Library: PapaParse (v5.4.1) -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="js/sheet-api.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

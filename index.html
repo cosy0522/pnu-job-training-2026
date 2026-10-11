@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 부산대학교 직무연수 카탈로그 - PNU HRD Portal</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       GLOBAL HEADER (반응형 PNU 헤더 & 로고)
+       ===================================================================== -->
+  <header class="pnu-header">
+    <div class="pnu-header-inner">
+      
+      <!-- 반응형 브랜드 로고 -->
+      <a href="index.html" class="pnu-logo-link" aria-label="부산대학교 직무연수 홈으로 이동">
+        <div class="pnu-logo-symbol-wrapper">
+          <img 
+            src="assets/logo.png" 
+            alt="부산대학교 로고" 
+            class="pnu-logo-symbol"
+            width="46" 
+            height="46"
+          >
+        </div>
+        <div class="pnu-logo-text">
+          <span class="pnu-logo-kr">부산대학교</span>
+          <span class="pnu-logo-en">PUSAN NATIONAL UNIVERSITY</span>
+        </div>
+        <div class="pnu-logo-divider" aria-hidden="true"></div>
+        <span class="pnu-logo-badge">직무연수 포털</span>
+      </a>
+
+      <!-- 데스크톱 글로벌 네비게이션 -->
+      <nav class="pnu-nav" aria-label="메인 메뉴">
+        <ul class="pnu-nav-list">
+          <li><a href="index.html" class="pnu-nav-link active">연수 목록</a></li>
+          <li><a href="#stats" class="pnu-nav-link">연수 현황</a></li>
+          <li><a href="https://hrd.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-nav-link">인재개발원</a></li>
+          <li><a href="https://www.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-nav-link">부산대 홈</a></li>
+        </ul>
+      </nav>
+
+      <!-- 우측 액션 및 모바일 햄버거 -->
+      <div class="pnu-actions">
+        <a href="https://e-onestop.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-btn-portal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+            <polyline points="10 17 15 12 10 7"/>
+            <line x1="15" y1="12" x2="3" y2="12"/>
+          </svg>
+          <span>포털 바로가기</span>
+        </a>
+
+        <!-- 모바일 햄버거 메뉴 버튼 -->
+        <button 
+          type="button" 
+          class="pnu-hamburger-btn" 
+          aria-label="전체 메뉴 열기" 
+          aria-expanded="false"
+        >
+          <svg class="pnu-hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- 모바일 드로어 오버레이 -->
+    <div class="pnu-mobile-drawer">
+      <div class="pnu-mobile-menu-content">
+        <ul class="pnu-mobile-nav-list">
+          <li><a href="index.html" class="pnu-mobile-nav-link active">연수 목록</a></li>
+          <li><a href="#stats" class="pnu-mobile-nav-link">연수 현황</a></li>
+          <li><a href="https://hrd.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-mobile-nav-link">인재개발원 바로가기</a></li>
+          <li><a href="https://www.pusan.ac.kr" target="_blank" rel="noopener" class="pnu-mobile-nav-link">부산대학교 홈페이지</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN WRAPPER
+       ===================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero-banner" id="stats">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+            <span>2026 PUSAN NATIONAL UNIVERSITY · HRD PROGRAM</span>
+          </div>
+
+          <h1 class="hero-title">
+            미래를 여는 지성과 전문성,<br>
+            <span class="brand-accent">2026 부산대학교 교직원 직무연수</span>
+          </h1>
+
+          <p class="hero-desc">
+            대학 행정 고도화와 미래 교육 역량 강화를 위한 2026년도 직무연수 카탈로그입니다.
+            구글 스프레드시트와 실시간 연동되어 최신 교육 일정 및 신청 정보를 즉시 확인하실 수 있습니다.
+          </p>
+
+          <!-- 실시간 집계 지표 (KPI Stats) -->
+          <div class="hero-stats-row">
+            <div class="stat-pill total">
+              <div class="icon">📚</div>
+              <div class="meta">
+                <span class="label">전체 개설 연수</span>
+                <span class="val" id="statTotalVal">-</span>
+              </div>
+            </div>
+
+            <div class="stat-pill required">
+              <div class="icon">🚨</div>
+              <div class="meta">
+                <span class="label">법정·필수 과정</span>
+                <span class="val" id="statRequiredVal">-</span>
+              </div>
+            </div>
+
+            <div class="stat-pill online">
+              <div class="icon">💻</div>
+              <div class="meta">
+                <span class="label">온라인 상시 수강</span>
+                <span class="val" id="statOnlineVal">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY SEARCH & MULTI-FILTER DECK -->
+    <section class="filter-deck-sticky">
+      <div class="container">
+        
+        <!-- 검색창 및 셀렉트 박스 그룹 -->
+        <div class="search-primary-row">
+          <div class="search-input-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="search-input" 
+              placeholder="연수 과정명, 과정코드(PNU-2026-...), 담당부서, 키워드를 검색하세요..."
+              aria-label="연수 과정 검색"
+            >
+          </div>
+
+          <div class="filter-selects-group">
+            <!-- 이수구분 필터 -->
+            <select id="filterCompletion" class="filter-select" aria-label="이수구분 선택">
+              <option value="ALL">이수구분 (전체)</option>
+              <option value="필수">필수 / 필수(해당자)</option>
+              <option value="권장">권장</option>
+              <option value="선택">선택</option>
+            </select>
+
+            <!-- 교육방식 필터 -->
+            <select id="filterMethod" class="filter-select" aria-label="교육방식 선택">
+              <option value="ALL">교육방식 (전체)</option>
+              <option value="온라인">온라인</option>
+              <option value="집합">집합</option>
+              <option value="혼합">혼합</option>
+            </select>
+
+            <!-- 대상 필터 -->
+            <select id="filterTarget" class="filter-select" aria-label="교육대상 선택">
+              <option value="ALL">대상 (전체)</option>
+              <option value="전 직원">전 직원</option>
+              <option value="실무자">실무자</option>
+              <option value="신규자">신규자</option>
+              <option value="관리자">관리자</option>
+            </select>
+
+            <!-- 초기화 버튼 -->
+            <button type="button" id="btnResetFilters" class="btn-reset-filters" title="모든 검색 및 필터 초기화">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              <span>초기화</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 분야별 태그 슬라이더 칩 -->
+        <div class="category-chips-row" id="categoryChips">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESULTS & CARDS SECTION -->
+    <section class="container">
+      
+      <!-- 결과 요약 바 -->
+      <div class="results-bar">
+        <span class="results-count" id="resultsCount">연수 과정을 불러오는 중입니다...</span>
+        <div class="live-indicator">
+          <span class="pulse"></span>
+          <span>Google Sheets 실시간 동기화</span>
+        </div>
+      </div>
+
+      <!-- 3열 반응형 과정 카드 그리드 -->
+      <div class="courses-grid" id="coursesContainer">
+        <!-- Dynamically rendered via JS -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="pnu-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-wrap">
+          <div class="footer-brand-title">
+            <img src="assets/logo.png" alt="부산대학교 엠블럼">
+            <span>부산대학교 직무연수 포털</span>
+          </div>
+          <p class="footer-brand-desc">
+            (46241) 부산광역시 금정구 부산대학로63번길 2 (장전동) 부산대학교 인재개발원<br>
+            2026 직무연수 카탈로그 디지털 혁신 프로젝트
+          </p>
+        </div>
+
+        <div class="footer-links-row">
+          <div class="footer-col">
+            <h5>연수 담당 부서</h5>
+            <ul>
+              <li><a href="tel:051-510-1231">인재개발원 (051-510-1231)</a></li>
+              <li><a href="tel:051-510-2001">정보화본부 (051-510-2001)</a></li>
+              <li><a href="tel:051-510-1119">안전관리실 (051-510-1119)</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>학내 주요 시스템</h5>
+            <ul>
+              <li><a href="https://e-onestop.pusan.ac.kr" target="_blank" rel="noopener">스마트 원스톱 포털</a></li>
+              <li><a href="https://plato.pusan.ac.kr" target="_blank" rel="noopener">PLATO 스마트 교육 플랫폼</a></li>
+              <li><a href="https://lib.pusan.ac.kr" target="_blank" rel="noopener">부산대학교 도서관</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 PUSAN NATIONAL UNIVERSITY. All Rights Reserved.</p>
+        <p>Real-time Google Sheets Live API Integration with PapaParse</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External Library: PapaParse (v5.4.1) -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="js/sheet-api.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

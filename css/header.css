@@ -1,0 +1,371 @@
+/* ==========================================================================
+   PNU Responsive Header & Logo Stylesheet
+   Color Palette: PNU Royal Blue (#004098 / #005BAC), PNU Green (#00873D)
+   ========================================================================== */
+
+:root {
+  --pnu-blue-primary: #004098;
+  --pnu-blue-dark: #00265c;
+  --pnu-blue-light: #005bac;
+  --pnu-green: #00873d;
+  --pnu-green-light: #e6f4ea;
+  --pnu-text-main: #0f172a;
+  --pnu-text-muted: #475569;
+  --pnu-border-color: #e2e8f0;
+  --pnu-header-bg: rgba(255, 255, 255, 0.94);
+  --pnu-header-height: 72px;
+  --pnu-header-height-mobile: 60px;
+  --pnu-shadow: 0 4px 20px -2px rgba(0, 32, 96, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --pnu-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header Container */
+.pnu-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--pnu-header-height);
+  background: var(--pnu-header-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--pnu-border-color);
+  box-shadow: var(--pnu-shadow);
+  z-index: 1000;
+  transition: height var(--pnu-transition), background-color var(--pnu-transition), box-shadow var(--pnu-transition);
+}
+
+.pnu-header.scrolled {
+  height: 64px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 6px 24px -2px rgba(0, 32, 96, 0.1);
+}
+
+.pnu-header-inner {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE LOGO COMPONENT
+   ========================================================================== */
+.pnu-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  transition: transform var(--pnu-transition), opacity var(--pnu-transition);
+  padding: 0.35rem 0.5rem;
+  margin-left: -0.5rem;
+  border-radius: 0.65rem;
+}
+
+.pnu-logo-link:hover {
+  transform: translateY(-1px);
+}
+
+.pnu-logo-link:focus-visible {
+  outline: 2px solid var(--pnu-blue-light);
+  outline-offset: 3px;
+}
+
+/* Logo Symbol (Image) */
+.pnu-logo-symbol-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pnu-logo-symbol {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 64, 152, 0.12));
+  transition: width var(--pnu-transition), height var(--pnu-transition), transform var(--pnu-transition);
+}
+
+.pnu-logo-link:hover .pnu-logo-symbol {
+  transform: rotate(-3deg) scale(1.04);
+}
+
+/* Logo Typography / Wordmark */
+.pnu-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.pnu-logo-kr {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--pnu-blue-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--pnu-transition);
+}
+
+.pnu-logo-en {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Montserrat', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+  transition: color var(--pnu-transition);
+}
+
+.pnu-logo-link:hover .pnu-logo-kr {
+  color: var(--pnu-blue-dark);
+}
+
+.pnu-logo-link:hover .pnu-logo-en {
+  color: var(--pnu-blue-light);
+}
+
+/* Service Divider & Badge */
+.pnu-logo-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--pnu-border-color);
+  margin: 0 0.2rem;
+}
+
+.pnu-logo-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--pnu-green);
+  background: var(--pnu-green-light);
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  letter-spacing: -0.01em;
+  border: 1px solid rgba(0, 135, 61, 0.2);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   NAVIGATION & ACTIONS
+   ========================================================================== */
+.pnu-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pnu-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.35rem;
+}
+
+.pnu-nav-link {
+  display: block;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all var(--pnu-transition);
+}
+
+.pnu-nav-link:hover {
+  color: var(--pnu-blue-primary);
+  background: rgba(0, 64, 152, 0.06);
+}
+
+.pnu-nav-link.active {
+  color: var(--pnu-blue-primary);
+  background: rgba(0, 64, 152, 0.1);
+  font-weight: 700;
+}
+
+/* Right Actions */
+.pnu-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pnu-btn-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, var(--pnu-blue-primary), var(--pnu-blue-light));
+  color: #ffffff;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 0.55rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 64, 152, 0.25);
+  transition: var(--pnu-transition);
+}
+
+.pnu-btn-portal:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 64, 152, 0.35);
+  background: linear-gradient(135deg, var(--pnu-blue-dark), var(--pnu-blue-primary));
+}
+
+/* Mobile Hamburger Toggle */
+.pnu-hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: var(--pnu-text-main);
+  transition: background-color var(--pnu-transition);
+}
+
+.pnu-hamburger-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.pnu-hamburger-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Mobile Drawer Overlay & Panel */
+.pnu-mobile-drawer {
+  display: none;
+  position: fixed;
+  top: var(--pnu-header-height-mobile);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--pnu-transition);
+}
+
+.pnu-mobile-drawer.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pnu-mobile-menu-content {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--pnu-border-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  transition: transform var(--pnu-transition);
+}
+
+.pnu-mobile-drawer.open .pnu-mobile-menu-content {
+  transform: translateY(0);
+}
+
+.pnu-mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pnu-mobile-nav-link {
+  display: block;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: var(--pnu-transition);
+}
+
+.pnu-mobile-nav-link:hover,
+.pnu-mobile-nav-link.active {
+  background: rgba(0, 64, 152, 0.08);
+  color: var(--pnu-blue-primary);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .pnu-nav {
+    display: none;
+  }
+  .pnu-hamburger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pnu-mobile-drawer {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --pnu-header-height: var(--pnu-header-height-mobile);
+  }
+  .pnu-header-inner {
+    padding: 0 1rem;
+  }
+  .pnu-logo-link {
+    gap: 0.65rem;
+  }
+  .pnu-logo-symbol {
+    width: 38px;
+    height: 38px;
+  }
+  .pnu-logo-kr {
+    font-size: 1.1rem;
+  }
+  .pnu-logo-en {
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+  }
+  .pnu-logo-divider,
+  .pnu-logo-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pnu-logo-symbol {
+    width: 34px;
+    height: 34px;
+  }
+  .pnu-logo-kr {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .pnu-logo-en {
+    display: none;
+  }
+  .pnu-btn-portal {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+  }
+}
