@@ -151,7 +151,7 @@
         
         <!-- 검색창 및 셀렉트 박스 그룹 -->
         <div class="search-primary-row">
-          <div class="search-input-box">
+          <form class="search-input-box" id="searchForm" onsubmit="return false;" role="search">
             <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -160,10 +160,24 @@
               type="text" 
               id="searchInput" 
               class="search-input" 
-              placeholder="연수 과정명, 과정코드(PNU-2026-...), 담당부서, 키워드를 검색하세요..."
+              placeholder="과정명, 과정코드, 담당부서(예: 정보화본부), 키워드 검색..."
               aria-label="연수 과정 검색"
+              autocomplete="off"
             >
-          </div>
+            <button type="button" id="btnSearchClear" class="btn-search-clear" aria-label="검색어 지우기" style="display: none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="18" x2="18" y2="6"/>
+              </svg>
+            </button>
+            <button type="submit" id="btnSearchSubmit" class="btn-search-submit" aria-label="검색 실행">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <span>검색</span>
+            </button>
+          </form>
 
           <div class="filter-selects-group">
             <!-- 이수구분 필터 -->

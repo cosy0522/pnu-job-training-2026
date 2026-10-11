@@ -196,7 +196,7 @@ body {
 
 .search-input {
   width: 100%;
-  padding: 0.85rem 1rem 0.85rem 3rem;
+  padding: 0.85rem 6.8rem 0.85rem 3rem;
   border: 1.5px solid #cbd5e1;
   border-radius: 0.75rem;
   font-size: 1rem;
@@ -214,6 +214,64 @@ body {
 
 .search-input::placeholder {
   color: #94a3b8;
+}
+
+/* Clear Search Button */
+.btn-search-clear {
+  position: absolute;
+  right: 5.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f1f5f9;
+  border: none;
+  color: #64748b;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.btn-search-clear:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Explicit Search Submit Button */
+.btn-search-submit {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.05rem;
+  background: #004098;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.55rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 64, 152, 0.2);
+}
+
+.btn-search-submit:hover {
+  background: #002d6b;
+  box-shadow: 0 3px 8px rgba(0, 64, 152, 0.3);
+  transform: translateY(-50%) translateY(-1px);
+}
+
+.btn-search-submit:active {
+  transform: translateY(-50%) translateY(0);
 }
 
 /* Dropdown Filters */

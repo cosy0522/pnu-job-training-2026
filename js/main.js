@@ -8,7 +8,10 @@
   const statsTotalVal = document.getElementById('statTotalVal');
   const statsRequiredVal = document.getElementById('statRequiredVal');
   const statsOnlineVal = document.getElementById('statOnlineVal');
+  const searchForm = document.getElementById('searchForm');
   const searchInput = document.getElementById('searchInput');
+  const btnSearchSubmit = document.getElementById('btnSearchSubmit');
+  const btnSearchClear = document.getElementById('btnSearchClear');
   const filterCategoryChips = document.getElementById('categoryChips');
   const filterCompletion = document.getElementById('filterCompletion');
   const filterMethod = document.getElementById('filterMethod');
@@ -117,14 +120,65 @@
 
   // 4. Bind Input & Filter Events
   function bindEvents() {
+    // Real-time input typing & clear button visibility
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
+        const val = e.target.value;
+        if (btnSearchClear) {
+          btnSearchClear.style.display = val.length > 0 ? 'flex' : 'none';
+        }
         clearTimeout(searchDebounceTimer);
         searchDebounceTimer = setTimeout(() => {
-          searchQuery = e.target.value.trim().toLowerCase();
+          searchQuery = val.trim().toLowerCase();
           applyFilters();
         }, 150);
       });
+    }
+
+    // Clear search button click
+    if (btnSearchClear) {
+      btnSearchClear.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          searchInput.focus();
+        }
+        btnSearchClear.style.display = 'none';
+        searchQuery = '';
+        applyFilters();
+      });
+    }
+
+    // Form submission (Enter key press in input)
+    if (searchForm) {
+      searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        executeExplicitSearch();
+      });
+    }
+
+    // Explicit Search Button click
+    if (btnSearchSubmit) {
+      btnSearchSubmit.addEventListener('click', (e) => {
+        e.preventDefault();
+        executeExplicitSearch();
+      });
+    }
+
+    function executeExplicitSearch() {
+      clearTimeout(searchDebounceTimer);
+      if (searchInput) {
+        searchQuery = searchInput.value.trim().toLowerCase();
+        if (btnSearchClear) {
+          btnSearchClear.style.display = searchInput.value.length > 0 ? 'flex' : 'none';
+        }
+      }
+      applyFilters();
+
+      // Smooth scroll to results
+      const resultsSection = document.querySelector('.results-bar');
+      if (resultsSection) {
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     }
 
     if (filterCompletion) {
@@ -165,6 +219,7 @@
     selectedTarget = 'ALL';
 
     if (searchInput) searchInput.value = '';
+    if (btnSearchClear) btnSearchClear.style.display = 'none';
     if (filterCompletion) {
       filterCompletion.value = 'ALL';
       filterCompletion.classList.remove('active');
@@ -219,14 +274,22 @@
         const title = (course['과정명'] || '').toLowerCase();
         const code = (course['과정코드'] || '').toLowerCase();
         const dept = (course['담당부서'] || '').toLowerCase();
+        const category = (course['분야'] || '').toLowerCase();
+        const target = (course['대상'] || '').toLowerCase();
         const summary = (course['한줄소개'] || '').toLowerCase();
         const detail = (course['상세소개'] || '').toLowerCase();
+        const goals = (course['학습목표'] || '').toLowerCase();
+        const content = (course['주요내용'] || '').toLowerCase();
 
         const matches = title.includes(searchQuery) ||
                         code.includes(searchQuery) ||
                         dept.includes(searchQuery) ||
+                        category.includes(searchQuery) ||
+                        target.includes(searchQuery) ||
                         summary.includes(searchQuery) ||
-                        detail.includes(searchQuery);
+                        detail.includes(searchQuery) ||
+                        goals.includes(searchQuery) ||
+                        content.includes(searchQuery);
         if (!matches) return false;
       }
 
@@ -235,7 +298,11 @@
 
     renderCourseCards(filtered);
     if (resultsCount) {
-      resultsCount.innerHTML = `검색 결과 총 <strong>${filtered.length}</strong>개 과정`;
+      if (searchQuery) {
+        resultsCount.innerHTML = `검색어 "<strong>${escapeHtml(searchQuery)}</strong>" 검색 결과 총 <strong>${filtered.length}</strong>개 과정`;
+      } else {
+        resultsCount.innerHTML = `검색 결과 총 <strong>${filtered.length}</strong>개 과정`;
+      }
     }
   }
 
